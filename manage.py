@@ -26,8 +26,12 @@ def manage(dir):
         print("Copying configuration...")
         copyfile(startup.ritogame + "input.ini", startup.ritogame + f"cfgs/{inp}.ini")
         print("Done.")
-    else:
-        pass
+    elif inp == "3":
+        printDir(cfgs)
+        inp = input("Enter the name of the config you would like to remove: ")
+        print("Removing...")
+        os.remove(f"{cfgs}{inp}.ini")
+        print("Done.")
 
     
 cfgs = startup.ritogame + "cfgs/"
